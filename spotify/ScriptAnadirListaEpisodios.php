@@ -14,21 +14,21 @@
 
         // Mostrar los valores para depuración
         echo "ID Lista: $idlista<br>";
-        echo "ID Canción: $idcancion<br>";
+        echo "ID episodio: $idcancion<br>";
 
         // Verificar si las variables no están vacías
-        if (!empty($idlista) && !empty($idcancion)) {
+        if (!empty($idlista) && !empty($idepisodio)) {
             $cadenaSQL = "INSERT INTO contenido_lista_episodios (idlista_reproduccion, idepisodio) VALUES ('$idlista', '$idepisodio')";
             echo "SQL Query: $cadenaSQL<br>";
             if ($mysqli->query($cadenaSQL)) {
-                echo "Canción añadida exitosamente.<br>";
-                header("Location: Pagina_Episodio.php?idepisodios=" . $idepisodio);
+                echo "Episodio añadida exitosamente.<br>";
+                header("Location: Pagina_Episodio.php?idepisodio=" . $idepisodio);
                 exit();
             } else {
-                echo "Error al añadir la canción: " . $mysqli->error . "<br>";
+                echo "Error al añadir episodio: " . $mysqli->error . "<br>";
             }
         } else {
-            echo "Error: ID de lista o de canción está vacío.<br>";
+            echo "Error: ID de lista o de episodio está vacío.<br>";
         }
     }
 

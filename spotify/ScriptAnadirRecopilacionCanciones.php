@@ -13,11 +13,11 @@
         $idcancion = $_POST['idcanciones'];
 
         // Mostrar los valores para depuración
-        echo "ID Lista: $idlista<br>";
+        echo "ID Lista: $idrecopilacion<br>";
         echo "ID Canción: $idcancion<br>";
 
         // Verificar si las variables no están vacías
-        if (!empty($idlista) && !empty($idcancion)) {
+        if (!empty($idrecopilacion) && !empty($idcancion)) {
             $cadenaSQL = "INSERT INTO contenido_recopilaciones_caciones (idrecopilaciones, idcanciones) VALUES ('$idrecopilacion', '$idcancion')";
             echo "SQL Query: $cadenaSQL<br>";
             if ($mysqli->query($cadenaSQL)) {
